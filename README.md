@@ -52,3 +52,10 @@ docker run -it --net=hos \
     tiago \
     bash
 ```
+
+You can open an ew terminal and connect to the running container
+```
+docker exec -it tiago_project bash
+```
+
+Next, Try the [Pick and place tutorial](http://wiki.ros.org/Robots/TIAGo/Tutorials/MoveIt/Pick_place)
