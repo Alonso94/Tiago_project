@@ -10,7 +10,7 @@ Install docker
 wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.14.1-amd64.deb
 sudo apt install ~/Downloads/docker-desktop-4.14.1-amd64.deb
 ```
-
+## If you have an NVIDIA GPU
 Run the scripts for nvidia drivers
 ```
 bash nvidia-scripts.sh
