@@ -33,4 +33,3 @@ RUN rosdep install --from-paths src --ignore-src -y --rosdistro melodic --skip-k
         omni_base_description omni_drive_controller"
 RUN catkin build -DCATKIN_ENABLE_TESTING=0 -j $(expr `nproc` / 2)
 RUN echo "source /tiago_public_ws/devel/setup.bash" >> ~/.bashrc
-RUN git clone 
