@@ -3,22 +3,7 @@
 ## Windows:
 Install docker
 
-Build the docker image
-```
-docker build -t tiago https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_no_GPU
-```
-Start a terminal inside docker
-```
-docker run -it --net=host ^
-    --privileged ^
-    --env="DISPLAY" ^
-    --env="QT_X11_NO_MITSHM=1" ^
-    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
-    --name="tiago_project"^
-    tiago ^
-    bash
-```
-if you have an nvidia GPU
+## If you an NVIDIA GPU
 Build the docker image
 ```
 docker build -t tiago https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_nvidia
@@ -28,6 +13,23 @@ Then run
 docker run -it --net=host --gpus all ^
     --privileged ^
     --env="NVIDIA_DRIVER_CAPABILITIES=all" ^
+    --env="DISPLAY" ^
+    --env="QT_X11_NO_MITSHM=1" ^
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
+    --name="tiago_project"^
+    tiago ^
+    bash
+```
+
+## If your PC does not have NVIDIA
+Build the docker image
+```
+docker build -t tiago https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_no_GPU
+```
+Start a terminal inside docker
+```
+docker run -it --net=host ^
+    --privileged ^
     --env="DISPLAY" ^
     --env="QT_X11_NO_MITSHM=1" ^
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
@@ -67,7 +69,7 @@ Install docker
 wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.14.1-amd64.deb
 sudo apt install ~/Downloads/docker-desktop-4.14.1-amd64.deb
 ```
-## If your PC has an NVIDIA GPU
+## If you an NVIDIA GPU
 Run the scripts for nvidia drivers
 ```
 bash nvidia-scripts.sh
@@ -92,7 +94,7 @@ docker run -it --net=host --gpus all \
     bash
 ```
 
-## If you PC does not have NVIDIA
+## If your PC does not have NVIDIA
 
 Build the docker image
 ```
