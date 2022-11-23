@@ -52,10 +52,20 @@ docker run -it --net=hos \
     tiago \
     bash
 ```
+# Usage
 
-You can open an ew terminal and connect to the running container
+Start the docker container
 ```
-docker exec -it tiago_project bash
+docker start tiago_dual
+```
+Then open a new terminal and connect to the running container
+```
+docker exec -it tiago_dual_project bash
 ```
 
 Next, Try the [Pick and place tutorial](http://wiki.ros.org/Robots/TIAGo/Tutorials/MoveIt/Pick_place)
+
+You can stop the docker when you are done
+```
+docker stop tiago_dual_project
+```
