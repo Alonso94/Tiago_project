@@ -14,8 +14,25 @@ docker run -it --net=host ^
     --env="DISPLAY" ^
     --env="QT_X11_NO_MITSHM=1" ^
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
-    --name="tiago_dual_project"^
-    tiago_dual ^
+    --name="tiago_project"^
+    tiago ^
+    bash
+```
+if you have an nvidia GPU
+Build the docker image
+```
+docker build -t tiago https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_nvidia
+```
+Then run
+```
+docker run -it --net=host --gpus all ^
+    --privileged ^
+    --env="NVIDIA_DRIVER_CAPABILITIES=all" ^
+    --env="DISPLAY" ^
+    --env="QT_X11_NO_MITSHM=1" ^
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
+    --name="tiago_project"^
+    tiago ^
     bash
 ```
 
@@ -25,7 +42,7 @@ Follow the instructions [here](https://docs.docker.com/desktop/install/mac-insta
 
 Build the docker image
 ```
-docker build -t tiago_dual https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_no_GPU
+docker build -t tiago https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_no_GPU
 ```
 
 Start a terminal inside docker
@@ -34,8 +51,8 @@ docker run -it --net=host \
     --env="DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    --name="tiago_dual_project"\
-    --privileged tiago_dual \
+    --name="tiago_project"\
+    --privileged tiago \
     bash
 ```
 
