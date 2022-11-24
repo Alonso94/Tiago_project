@@ -26,7 +26,7 @@ Then you have two options:
     docker run -it --net=host --gpus all ^
         --privileged ^
         --env="NVIDIA_DRIVER_CAPABILITIES=all" ^
-        --env="DISPLAY=<windows_ip>:0" \
+        --env="DISPLAY=<windows_ip>:0" ^
         --name="tiago_project"^
         tiago ^
         bash
@@ -41,7 +41,7 @@ Then you have two options:
     ```
     docker run -it --net=host ^
         --privileged ^
-        --env="DISPLAY=<windows_ip>:0" \
+        --env="DISPLAY=<windows_ip>:0" ^
         --name="tiago_project"^
         tiago ^
         bash
