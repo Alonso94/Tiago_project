@@ -26,6 +26,8 @@ Then you have two options:
     docker run -it --net=host --gpus all ^
         --privileged ^
         --env="NVIDIA_DRIVER_CAPABILITIES=all" ^
+        --env="QT_X11_NO_MITSHM=1" ^
+        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
         --env="DISPLAY=<windows_ip>:0" ^
         --name="tiago_project"^
         tiago ^
@@ -42,6 +44,8 @@ Then you have two options:
     docker run -it --net=host ^
         --privileged ^
         --env="DISPLAY=<windows_ip>:0" ^
+        --env="QT_X11_NO_MITSHM=1" ^
+        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" ^
         --name="tiago_project"^
         tiago ^
         bash
