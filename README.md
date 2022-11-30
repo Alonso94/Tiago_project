@@ -66,6 +66,11 @@ Follow the instructions Follow the instructions to [install docker](https://docs
 
 Setup X server for X11 forwarding, follow the instructions in [this gist](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088)
 
+Then run
+```
+defaults write org.xquartz.X11 enable_iglx -bool true
+```
+
 Build the docker image
 ```
 docker build -t tiago https://raw.githubusercontent.com/Alonso94/Tiago_project/master/Dockerfile_no_GPU
