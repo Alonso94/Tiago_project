@@ -83,6 +83,7 @@ docker run -it --net=host \
     --env="DISPLAY=$ip:0" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    -v "$SSH_AUTH_SOCK:$SSH_AUTH_SOCK" -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK\
     --name="tiago_project"\
     --privileged tiago \
     bash
